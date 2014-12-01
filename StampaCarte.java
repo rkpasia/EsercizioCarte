@@ -7,18 +7,20 @@ public class StampaCarte {
     //Mazzo m = new Mazzo(CartaTrevisana.GRANDEZZA_MAZZO, CartaTrevisana.NUMERO_SEMI);
     //m.add(c);
     //System.out.println(c);
+    System.out.println("Con che carte vuoi giocare?\n1 - Francesi\n2 - Trevisane");
+    int scelta = Leggi.unInt();
 
-    Mazzo mazzoFrancese = new Mazzo();
-    CompositoreMazzo.componiMazzoFrancese(mazzoFrancese);
-    System.out.println(mazzoFrancese.toString());
+    Mazzo<Carta> mazzo = new Mazzo<Carta>();
 
-    Mazzo mazzoTrevisano = new Mazzo();
-    CompositoreMazzo.componiMazzoTrevisano(mazzoTrevisano);
-    System.out.println(mazzoTrevisano.toString());
+    if(scelta == 1){
+      CompositoreMazzo.componiMazzoFrancese(mazzo);
+    }else if(scelta == 2){
+      CompositoreMazzo.componiMazzoTrevisano(mazzo);
+    }else{
+      System.out.println("Il numero inserito non seleziona una tipologia di carte corretta.");
+    }
 
-    System.out.println(CompositoreMazzo.componiMazzoFrancese().toString());
-    System.out.println(CompositoreMazzo.componiMazzoTrevisano().toString());
-
+    CartaPiuAltaVince.game(mazzo);
   }
 
 }

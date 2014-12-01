@@ -18,6 +18,8 @@ public class CompositoreMazzo {
         mazzo.add(new CartaTrevisana(j,i));
       }
     }
+    mazzo.setMaxSize();
+    mazzo.mescola();
   }
 
   public static Mazzo componiMazzoFrancese() {
@@ -36,5 +38,7 @@ public class CompositoreMazzo {
         mazzo.add(new CartaFrancese(j, i));
       }
     }
+    mazzo.setMaxSize();
+    mazzo.mescola();
   }
 }

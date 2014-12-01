@@ -18,6 +18,13 @@ public class Carta {
     this.valore = valore;
   }
 
+  public static boolean compareTo(Carta c1, Carta c2){
+    if(c1.valore < c2.valore){
+      return false;
+    }
+    return true;
+  }
+
   public void setNumero(int numero){
     this.numero = numero;
   }
